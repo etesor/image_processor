@@ -5,6 +5,10 @@ Users upload high resolution images from their cellphones, but these images are 
 
 You are tasked to implement the following design, intended to  process images as they are uploaded, generate the image in different resolutions and store them on a target bucket for future usage by backend micro-services.
 
+<p align="center">
+    <img src="diagram.png" alt="diagram" width="750"/>
+</p>
+
 1. User uploads image on Input bucket
 2. Upon upload, a Lambda function is triggered
 3. Lambda takes the new image and generate the following output
