@@ -43,7 +43,7 @@ resource "aws_s3_bucket" "archive" {
 }
 
 resource "aws_s3_bucket_lifecycle_configuration" "origin" {
-  bucket = aws_s3_bucket.origin
+  bucket = aws_s3_bucket.origin.id
 
   rule {
     id = "cleanup"
