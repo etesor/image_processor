@@ -9,3 +9,15 @@
 
 # Ignore deployment artifacts
 *.zip
+
+# Python environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Layer
+modules/
