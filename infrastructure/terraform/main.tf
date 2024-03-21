@@ -15,6 +15,7 @@ provider "aws" {
     tags = {
       "project" = "image_processor"
       "owner" = "terraform"
+      "env" = var.environment
     }
   }
 }
@@ -22,4 +23,11 @@ provider "aws" {
 locals {
   archive_path = "${path.module}/function.zip"
   layer_archive_path = "${path.module}/layer.zip"
+}
+
+
+variable "environment" {
+  type = string
+  description = "Environment name"
+  default = "dev"
 }

@@ -1,10 +1,14 @@
-resource "aws_s3_bucket" "origin" {
-  bucket = "origin-image-store"
+locals { // Locals usage
+  postfix = "image-store"
+}
+
+resource "aws_s3_bucket" "origin" { // terraform resource id
+  bucket = "origin-${local.postfix}"
   force_destroy = true
 }
 
 resource "aws_s3_bucket" "archive" {
-  bucket = "archive-image-store"
+  bucket = "archive-${local.postfix}"
   force_destroy = true
 }
 
