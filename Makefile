@@ -1,5 +1,5 @@
 install:
-	cd function && $(MAKE)
+	cd layer && $(MAKE)
 
 clean:
-	cd function && $(MAKE) clean
+	cd layer && $(MAKE) clean
