@@ -81,6 +81,38 @@ resource "aws_iam_role_policy_attachment" "lambda_policy" {
 
 }
 
+data "aws_iam_policy_document" "lambda_s3" {
+  statement {
+    actions = [
+      "s3:GetObject"
+    ]
+    effect = "Allow"
+    resources = [
+      "arn:aws:s3:::*/*"
+    ]
+  }
+  statement {
+    actions = [
+      "s3:PutObject"
+    ]
+    effect = "Allow"
+    resources = [
+      "arn:aws:s3:::*/*"
+    ]
+  }
+}
+
+resource "aws_iam_policy" "lambda_s3" {
+  name = "LambdaS3Policy"
+  policy = data.aws_iam_policy_document.lambda_s3.json
+}
+
+resource "aws_iam_role_policy_attachment" "lambda_s3" {
+  role = aws_iam_role.lambda_exec.name
+  policy_arn = aws_iam_policy.lambda_s3.arn
+
+}
+
 resource "aws_lambda_permission" "allow_bucket" {
   statement_id = "AllowExecutionFromS3Bucket"
   action = "lambda:InvokeFunction"
