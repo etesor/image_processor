@@ -12,11 +12,7 @@ You are tasked to implement the following design, intended to  process images as
 1. User uploads image on Input bucket
 2. Upon upload, a Lambda function is triggered
 3. Lambda takes the new image and generate the following output
-    1. Square posts is 1080px by 1080px at a 1:1 aspect ratio.
-    2. For landscape posts, use an image that is 1080px by 566px, with an aspect ratio of 1.91:1.
-    3. Vertical images should be sized at 1080px by 1350px with a 4:5 aspect ratio.
-    4. Choose the most appropriate folder structure and image naming convention to facilitate the organization.
-4. When the process is finished, Lambda should add a tag to the original image indicating that it has already been processed.
+    1. Smaller version of the image, stored in the archive bucket.
 
 ### Input bucket configuration:
 

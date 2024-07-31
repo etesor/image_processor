@@ -12,11 +12,7 @@ Terraform HCL code to deploy the whole application is provided. A remote backend
 - Execute `terraform apply`, review the plan again and type _yes_ if the promt ask you to do so in order to allow Terraform to do the planned changes.
 - When you're done, execute `terraform destroy`. All IaC resources will be deleted from AWS.
 
-## Cloudformation
-TBD
-
 Always remember: _There's no perfect tool. It all depends on the context._
-
 
 References:
 - https://aws.amazon.com/blogs/infrastructure-and-automation/deploying-aws-lambda-functions-using-aws-cloudformation-the-portable-way/
